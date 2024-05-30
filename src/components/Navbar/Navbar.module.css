@@ -1,0 +1,139 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background-color: var(--background-nav);
+  color: var(--font-color);
+  width: 100%;
+}
+
+.navbarBrand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbarBrandLink {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.navbarMenu {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbarItem {
+  text-decoration: none;
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+}
+
+.navbarItem:hover {
+  background-color: var(--color-hover);
+}
+
+.navbarLink {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.hasSubmenu {
+  position: relative;
+}
+
+.hasSubmenu .submenu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: var(--background-nav);
+  flex-direction: column;
+}
+
+.hasSubmenu .submenu.open {
+  display: flex;
+  width: max-content;
+  background-color: var(--background-nav);
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbarSubItem {
+  display: flex;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.navbarSubItem:hover {
+  background-color: var(--color-hover);
+}
+
+/* Responsive styles */
+.navbarBurger {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+@media (max-width: 992px) {
+  .navbarResponsive {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbarMenu {
+    flex-direction: column;
+    display: none;
+  }
+
+  .navbarMenu.open {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    width: 100%;
+    background-color: var(--background-nav);
+    top: 80px;
+    left: 0;
+  }
+
+  .navbarItem {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 0 0 0;
+  }
+
+  .navbarSubItem {
+    width: 100%;
+    justify-content: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .navbarBurger {
+    display: block;
+  }
+
+  .hasSubmenu .submenu {
+    position: static;
+  }
+
+  .hasSubmenu .submenu.open {
+    width: 100%;
+    margin-top: 15px;
+    border: none;
+    border-radius: 0;
+    transition: background-color 0.3s;
+  }
+}
